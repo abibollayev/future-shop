@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://c1505m33vfysm"]
+
+[ext_resource type="PackedScene" uid="uid://dyiyyqn7hp5vt" path="res://assets/iron_man/iron_man_heart.glb" id="1_ciwpv"]
+
+[node name="talisman" type="Node3D"]
+
+[node name="Sketchfab_Scene" parent="." instance=ExtResource("1_ciwpv")]
+transform = Transform3D(0.045, 0, 0, 0, 0.045, 0, 0, 0, 0.045, 0, 0, 0)

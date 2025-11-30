@@ -1,0 +1,48 @@
+[gd_scene load_steps=7 format=3 uid="uid://bi72icu5ldy82"]
+
+[ext_resource type="PackedScene" uid="uid://bhsa80h1aysad" path="res://assets/truck/Truck.glb" id="1_u2t8j"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_hw08c"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_u2t8j"]
+data = PackedVector3Array(1, 0, 1, -1, 0, 1, 1, 0, -1, -1, 0, 1, -1, 0, -1, 1, 0, -1)
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_hw08c"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_43bpn"]
+sky_material = SubResource("ProceduralSkyMaterial_hw08c")
+radiance_size = 0
+
+[sub_resource type="Environment" id="Environment_u2t8j"]
+background_mode = 2
+sky = SubResource("Sky_43bpn")
+glow_enabled = true
+
+[node name="Map" type="Node3D"]
+
+[node name="PlaceMesh" type="MeshInstance3D" parent="."]
+transform = Transform3D(50, 0, 0, 0, 50, 0, 0, 0, 50, 0, 0, 0)
+mesh = SubResource("PlaneMesh_hw08c")
+
+[node name="PlaceBody" type="StaticBody3D" parent="PlaceMesh"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PlaceMesh/PlaceBody"]
+shape = SubResource("ConcavePolygonShape3D_u2t8j")
+
+[node name="Environment" type="Node3D" parent="."]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Environment"]
+environment = SubResource("Environment_u2t8j")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Environment"]
+transform = Transform3D(-0.866024, -0.433016, 0.250001, 0, 0.499998, 0.866026, -0.500003, 0.749999, -0.43301, -22, 101, 4)
+light_bake_mode = 0
+directional_shadow_mode = 0
+directional_shadow_max_distance = 1.0
+directional_shadow_pancake_size = 1.0
+
+[node name="Truck" parent="." instance=ExtResource("1_u2t8j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.388796, 0.24380207, 0.98812866)
+visible = false

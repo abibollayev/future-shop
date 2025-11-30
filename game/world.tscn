@@ -1,0 +1,306 @@
+[gd_scene load_steps=34 format=3 uid="uid://c7a4lmq18j078"]
+
+[ext_resource type="PackedScene" uid="uid://ck487xxphauwx" path="res://scenes/map.tscn" id="1_w2twt"]
+[ext_resource type="PackedScene" uid="uid://bwggrf7sbmkcv" path="res://addons/person-controller/PlayerCharacter/player_character_scene.tscn" id="2_pw63i"]
+[ext_resource type="Script" uid="uid://pddvjbmmy3dd" path="res://GameController/time_controller.gd" id="3_7ykc4"]
+[ext_resource type="PackedScene" uid="uid://cn722cg7qj3gx" path="res://game/table/table.tscn" id="3_rddb8"]
+[ext_resource type="Script" uid="uid://b0ges51ixd6vw" path="res://GameController/shop_controller.gd" id="4_pu3yx"]
+[ext_resource type="Script" uid="uid://datiua5o4x7k2" path="res://scenes/balance.gd" id="5_gubc5"]
+[ext_resource type="Script" uid="uid://3ql26idosoww" path="res://scenes/order.gd" id="6_6wevv"]
+[ext_resource type="PackedScene" uid="uid://be3wdxlitdqca" path="res://scenes/truck.tscn" id="6_rt2n2"]
+[ext_resource type="PackedScene" uid="uid://bklj7vstopril" path="res://scenes/show_case.tscn" id="7_c16ls"]
+[ext_resource type="Material" uid="uid://cc7k3t2i0deo3" path="res://materials/dark.tres" id="11_b3c55"]
+[ext_resource type="Script" uid="uid://s47vytn56jrl" path="res://scripts/customer.gd" id="11_cjey8"]
+[ext_resource type="PackedScene" uid="uid://dbknrflw7fw46" path="res://assets/chest/chest.glb" id="12_0o6il"]
+[ext_resource type="Script" uid="uid://dpdqpighsiu68" path="res://game/shop.gd" id="13_j15d7"]
+[ext_resource type="PackedScene" uid="uid://dkfdoqiwev4un" path="res://assets/human/human.glb" id="13_naw2d"]
+[ext_resource type="PackedScene" uid="uid://bc7t7r32edu58" path="res://assets/machine/arcade_machine.glb" id="13_u8v3k"]
+[ext_resource type="Script" uid="uid://ca31jaysj58kn" path="res://game/buy_mesh.gd" id="14_s7c85"]
+[ext_resource type="PackedScene" uid="uid://dvdhx1ywec14f" path="res://assets/table/Table.glb" id="14_si52b"]
+[ext_resource type="PackedScene" uid="uid://debmfjoodw72x" path="res://assets/light/Light.glb" id="15_si52b"]
+[ext_resource type="Script" uid="uid://bhun2a5w7icxb" path="res://game/start.gd" id="15_uxmhx"]
+[ext_resource type="PackedScene" uid="uid://begvny12p53nn" path="res://scenes/show_case_big.tscn" id="17_vcrwj"]
+[ext_resource type="PackedScene" uid="uid://c8sa4qgq625nl" path="res://assets/server/sci-fi_style_server.glb" id="19_mj0fl"]
+[ext_resource type="PackedScene" uid="uid://ca8jp01e1x5ym" path="res://assets/casse/casse.glb" id="20_y4mp7"]
+[ext_resource type="PackedScene" uid="uid://bx57scl7jemdb" path="res://assets/ff/ff.glb" id="23_u8v3k"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_01n6w"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_6u1mn"]
+data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_rddb8"]
+vertices = PackedVector3Array(11.503906, 0.53120494, 0.61468506, 11.753906, 0.53120494, 5.114685, 12.503906, 0.53120494, 5.114685, 12.503906, 0.53120494, -0.88531494, 4.5039063, 0.53120494, 26.864685, 6.0039063, 0.53120494, 26.864685, 6.0039063, 0.53120494, 0.86468506, 4.5039063, 0.53120494, -0.88531494)
+polygons = [PackedInt32Array(1, 0, 2), PackedInt32Array(2, 0, 3), PackedInt32Array(5, 4, 6), PackedInt32Array(6, 4, 7), PackedInt32Array(0, 6, 3), PackedInt32Array(3, 6, 7)]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_j15d7"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_s7c85"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_uxmhx"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_rddb8"]
+size = Vector3(1, 1.5849609, 1.4750977)
+
+[sub_resource type="BoxMesh" id="BoxMesh_j15d7"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_s7c85"]
+data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_s7c85"]
+
+[node name="MainScene" type="Node3D"]
+
+[node name="Map" parent="." instance=ExtResource("1_w2twt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0014264584, 0.0023555756, 0.0026745796)
+
+[node name="PlayerCharacter" parent="." instance=ExtResource("2_pw63i")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 1.0182593, 0)
+
+[node name="GameController" type="Node" parent="."]
+
+[node name="time" type="Node" parent="GameController"]
+script = ExtResource("3_7ykc4")
+
+[node name="shop" type="Node" parent="GameController"]
+script = ExtResource("4_pu3yx")
+
+[node name="balance" type="Node" parent="GameController"]
+script = ExtResource("5_gubc5")
+
+[node name="order" type="Node" parent="GameController"]
+script = ExtResource("6_6wevv")
+
+[node name="Truck" parent="." instance=ExtResource("6_rt2n2")]
+transform = Transform3D(-7.39, 0, -5.4826575e-07, 0, 2.289, 0, 1.1158589e-06, 0, -3.631, 3.2410583, -0.01504574, -16.553509)
+
+[node name="ShowCase" parent="." instance=ExtResource("7_c16ls")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.91991, 1.064625, 9.179609)
+
+[node name="Sketchfab_Scene3" parent="." instance=ExtResource("15_si52b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.023659, 5.005562, -6.0016966)
+
+[node name="Sketchfab_Scene4" parent="." instance=ExtResource("15_si52b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.023659, 5.005562, -6.0016966)
+
+[node name="Sketchfab_Scene5" parent="." instance=ExtResource("15_si52b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.023659, 5.005562, 4.9983034)
+
+[node name="Sketchfab_Scene6" parent="." instance=ExtResource("15_si52b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.023659, 5.005562, 4.9983034)
+
+[node name="Sketchfab_Scene" parent="." instance=ExtResource("14_si52b")]
+transform = Transform3D(1.395, 0, 0, 0, 1.395, 0, 0, 0, 1.395, 11.973957, 0.93634826, 6.8492656)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(3.5616865, 0, 0, 0, 1, 0, 0, 0, 1, 12.0311, 0.44442523, 6.8329644)
+transparency = 1.0
+mesh = SubResource("BoxMesh_01n6w")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_6u1mn")
+
+[node name="ShowCase2" parent="." instance=ExtResource("7_c16ls")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.91991, 1.064625, 9.179609)
+
+[node name="ShowCase3" parent="." instance=ExtResource("7_c16ls")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.91991, 1.064625, 9.179609)
+
+[node name="ShowCase4" parent="." instance=ExtResource("7_c16ls")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.91991, 1.064625, 9.179609)
+
+[node name="ShowCase5" parent="." instance=ExtResource("7_c16ls")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.91991, 1.064625, 9.179609)
+
+[node name="ShowCase6" parent="." instance=ExtResource("7_c16ls")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.91991, 1.064625, 9.179609)
+
+[node name="ShowCase7" parent="." instance=ExtResource("7_c16ls")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.91991, 1.064625, 9.179609)
+
+[node name="Sketchfab_Scene7" parent="." instance=ExtResource("12_0o6il")]
+transform = Transform3D(0.6819984, 0, 0.7313537, 0, 1, 0, -0.7313537, 0, 0.6819984, 11.2154875, 0.3645483, -9.035658)
+
+[node name="Sketchfab_Scene8" parent="." instance=ExtResource("12_0o6il")]
+transform = Transform3D(0.7372773, -0.29615927, 0.6072165, 0, 0.89879405, 0.43837115, -0.6755902, -0.32320112, 0.6626605, 10.800761, 1.2616235, -9.5739975)
+
+[node name="Sketchfab_Scene9" parent="." instance=ExtResource("12_0o6il")]
+transform = Transform3D(0.017297976, -0.2205438, 0.9752236, 0.55780125, 0.8116058, 0.17364816, -0.8297943, 0.54097724, 0.13705873, 10.4267645, 0.6631769, -7.534112)
+
+[node name="Sketchfab_Scene10" parent="." instance=ExtResource("13_u8v3k")]
+transform = Transform3D(1.2966924, 0, 0.858262, 0, 1.555, 0, -0.858262, 0, 1.2966924, 16.314304, 1.3975879, -9.3939)
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
+navigation_mesh = SubResource("NavigationMesh_rddb8")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="NavigationRegion3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.251953, -0.4532249, 13.033043)
+size = Vector3(2.4960938, 1, 28.836716)
+material = ExtResource("11_b3c55")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="NavigationRegion3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.103485, -0.46879506, 2.0160217)
+size = Vector3(1.6572876, 1, 6.704529)
+material = ExtResource("11_b3c55")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="NavigationRegion3D"]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 9.055708, -0.4657277, -0.051742077)
+size = Vector3(1.9697266, 1, 5.5459595)
+material = ExtResource("11_b3c55")
+
+[node name="Customer" type="CharacterBody3D" parent="." groups=["customer", "interact"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.3291736, 1, 25.94102)
+script = ExtResource("11_cjey8")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Customer"]
+transparency = 1.0
+mesh = SubResource("CapsuleMesh_j15d7")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Customer"]
+shape = SubResource("CapsuleShape3D_s7c85")
+disabled = true
+
+[node name="Area3D" type="Area3D" parent="Customer" groups=["customer"]]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Customer/Area3D"]
+shape = SubResource("CapsuleShape3D_uxmhx")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="Customer"]
+
+[node name="Sketchfab_Scene2" parent="Customer" instance=ExtResource("13_naw2d")]
+transform = Transform3D(-1.06, 0, -9.266814e-08, 0, 1.06, 0, 9.266814e-08, 0, -1.06, 0, -0.92423415, 0)
+
+[node name="Table" parent="." instance=ExtResource("3_rddb8")]
+transform = Transform3D(-5.5925607e-08, 0, 0.031133158, 0, 0.58438575, 0, -1.2794287, 0, -1.3608735e-09, 9.327422, 1.7043428, 3.0908532)
+
+[node name="Shop" type="Area3D" parent="." groups=["shop"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.161997, 0.69722545, 4.9420004)
+script = ExtResource("13_j15d7")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Shop" groups=["shop"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.29248047, -0.23754883)
+shape = SubResource("BoxShape3D_rddb8")
+
+[node name="BuyMesh" type="MeshInstance3D" parent="." groups=["interact"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.933492, 1.4782917, 6.5691056)
+transparency = 1.0
+mesh = SubResource("BoxMesh_j15d7")
+script = ExtResource("14_s7c85")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="BuyMesh"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BuyMesh/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_s7c85")
+
+[node name="Start" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.2764587, 1.004395, 25.946428)
+script = ExtResource("15_uxmhx")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Start"]
+shape = SubResource("BoxShape3D_s7c85")
+
+[node name="ShowCaseBig2" parent="." instance=ExtResource("17_vcrwj")]
+transform = Transform3D(1.715, 0, 0, 0, 1.715, 0, 0, 0, 1.715, 31.534826, 0.002355419, 6.5150433)
+
+[node name="ShowCaseBig3" parent="." instance=ExtResource("17_vcrwj")]
+transform = Transform3D(1.715, 0, 0, 0, 1.715, 0, 0, 0, 1.715, 31.534826, 0.002355419, 2.5150433)
+
+[node name="ShowCaseBig4" parent="." instance=ExtResource("17_vcrwj")]
+transform = Transform3D(1.715, 0, 0, 0, 1.715, 0, 0, 0, 1.715, 31.534826, 0.002355419, -2.4849567)
+
+[node name="ShowCaseBig5" parent="." instance=ExtResource("17_vcrwj")]
+transform = Transform3D(1.715, 0, 0, 0, 1.715, 0, 0, 0, 1.715, 31.534826, 0.002355419, -6.4849567)
+
+[node name="Sketchfab_Scene2" parent="." instance=ExtResource("19_mj0fl")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 14.941132, 0.0023555756, -10.47985)
+
+[node name="casse" parent="." instance=ExtResource("20_y4mp7")]
+transform = Transform3D(-0.20351596, 0, -0.117500015, 0, 0.235, 0, 0.117500015, 0, -0.20351596, 10.792575, 0.9444252, 6.765986)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(0.92718387, 0, -0.3746066, 0, 1, 0, 0.3746066, 0, 0.92718387, 10.706183, 0.9246323, -8.728918)
+transparency = 1.0
+use_collision = true
+size = Vector3(1, 1.831543, 4.050354)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="."]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 15.667284, 0.9246323, -10.325749)
+transparency = 1.0
+use_collision = true
+size = Vector3(1, 1.831543, 3.2725983)
+
+[node name="ff" parent="." instance=ExtResource("23_u8v3k")]
+transform = Transform3D(3.225, 0, 0, 0, 3.225, 0, 0, 0, 3.225, -80.12043, -1.9307756, 32.80015)
+
+[node name="ff2" parent="." instance=ExtResource("23_u8v3k")]
+transform = Transform3D(3.225, 0, 0, 0, 3.225, 0, 0, 0, 3.225, -80.12043, -1.9307756, 19.800152)
+
+[node name="ff3" parent="." instance=ExtResource("23_u8v3k")]
+transform = Transform3D(3.225, 0, 0, 0, 3.225, 0, 0, 0, 3.225, -80.12043, -1.9307756, 4.800152)
+
+[node name="ff4" parent="." instance=ExtResource("23_u8v3k")]
+transform = Transform3D(3.225, 0, 0, 0, 3.225, 0, 0, 0, 3.225, -80.12043, -1.9307756, -9.69492)
+
+[node name="ff5" parent="." instance=ExtResource("23_u8v3k")]
+transform = Transform3D(3.225, 0, 0, 0, 3.225, 0, 0, 0, 3.225, -80.12043, -1.9307756, -26.004482)
+
+[node name="ff6" parent="." instance=ExtResource("23_u8v3k")]
+transform = Transform3D(3.225, 0, 0, 0, 3.225, 0, 0, 0, 3.225, -124.196075, -1.9307756, 32.80015)
+
+[node name="ff7" parent="." instance=ExtResource("23_u8v3k")]
+transform = Transform3D(3.225, 0, 0, 0, 3.225, 0, 0, 0, 3.225, -124.196075, -1.9307756, 19.800152)
+
+[node name="ff8" parent="." instance=ExtResource("23_u8v3k")]
+transform = Transform3D(3.225, 0, 0, 0, 3.225, 0, 0, 0, 3.225, -124.196075, -1.9307756, 4.800152)
+
+[node name="ff9" parent="." instance=ExtResource("23_u8v3k")]
+transform = Transform3D(3.225, 0, 0, 0, 3.225, 0, 0, 0, 3.225, -124.196075, -1.9307756, -9.69492)
+
+[node name="ff10" parent="." instance=ExtResource("23_u8v3k")]
+transform = Transform3D(3.225, 0, 0, 0, 3.225, 0, 0, 0, 3.225, -124.196075, -1.9307756, -26.004482)
+
+[node name="ff11" parent="." instance=ExtResource("23_u8v3k")]
+transform = Transform3D(3.225, 0, 0, 0, 3.225, 0, 0, 0, 3.225, -124.196075, -1.9307756, 105.90425)
+
+[node name="ff16" parent="." instance=ExtResource("23_u8v3k")]
+transform = Transform3D(3.225, 0, 0, 0, 3.225, 0, 0, 0, 3.225, -84.41434, -1.9307756, 78.12238)
+
+[node name="ff12" parent="." instance=ExtResource("23_u8v3k")]
+transform = Transform3D(3.225, 0, 0, 0, 3.225, 0, 0, 0, 3.225, -124.196075, -1.9307756, 92.90425)
+
+[node name="ff13" parent="." instance=ExtResource("23_u8v3k")]
+transform = Transform3D(3.225, 0, 0, 0, 3.225, 0, 0, 0, 3.225, -124.196075, -1.9307756, 77.90425)
+
+[node name="ff14" parent="." instance=ExtResource("23_u8v3k")]
+transform = Transform3D(3.225, 0, 0, 0, 3.225, 0, 0, 0, 3.225, -124.196075, -1.9307756, 63.409176)
+
+[node name="ff15" parent="." instance=ExtResource("23_u8v3k")]
+transform = Transform3D(3.225, 0, 0, 0, 3.225, 0, 0, 0, 3.225, -124.196075, -1.9307756, 47.099613)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="."]
+transform = Transform3D(4.58, 0, 0, 0, 4.58, 0, 0, 0, 4.58, -31.39154, 0, 4.0664287)
+transparency = 1.0
+size = Vector3(1, 1, 38.167908)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="."]
+transform = Transform3D(4.58, 0, 0, 0, 4.58, 0, 0, 0, 4.58, 11.756054, 0, 51.47211)
+transparency = 1.0
+size = Vector3(1, 1, 16.761711)
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="."]
+transform = Transform3D(-2.0019816e-07, 0, 4.58, 0, 4.58, 0, -4.58, 0, -2.0019816e-07, -8.250406, 0, 27.240372)
+transparency = 1.0
+size = Vector3(1, 1, 16.761711)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="."]
+transform = Transform3D(4.58, 0, 0, 0, 4.58, 0, 0, 0, 4.58, 10.478006, 0, -51.300495)
+transparency = 1.0
+size = Vector3(1, 1, 16.761711)
+
+[connection signal="area_entered" from="Shop" to="Shop" method="_on_area_entered"]
+[connection signal="area_entered" from="Start" to="Start" method="_on_area_entered"]
+
+[editable path="PlayerCharacter"]
+[editable path="Customer/Sketchfab_Scene2"]

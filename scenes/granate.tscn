@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dgwmqiwuroycx"]
+
+[ext_resource type="PackedScene" uid="uid://cn30ye3j6psk6" path="res://assets/granate/cyber_punk_grenade__game_ready.glb" id="1_p5vqb"]
+
+[node name="granate" type="Node3D"]
+
+[node name="Sketchfab_Scene" parent="." instance=ExtResource("1_p5vqb")]
+transform = Transform3D(0.07, 0, 0, 0, 0.07, 0, 0, 0, 0.07, 0, 0, 0)

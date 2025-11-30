@@ -1,0 +1,60 @@
+[gd_scene load_steps=6 format=3 uid="uid://cn722cg7qj3gx"]
+
+[ext_resource type="PackedScene" uid="uid://b5ktdswpf6p3f" path="res://assets/sketchfab/open-close/open.glb" id="1_fow7l"]
+[ext_resource type="PackedScene" uid="uid://cni81q227emwp" path="res://assets/sketchfab/open-close/close.glb" id="2_hx8yw"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_fow7l"]
+
+[sub_resource type="GDScript" id="GDScript_fow7l"]
+script/source = "extends MeshInstance3D
+
+@onready var openMesh: Node3D = $open
+@onready var closeMesh: Node3D = $close
+
+var is_open = false
+
+func _ready() -> void:
+	close()
+
+func _interact():
+	toggle()
+
+func toggle():
+	if is_open:
+		close()
+	else:
+		open()
+
+func open():
+	openMesh.visible = true
+	closeMesh.visible = false
+	is_open = true
+	
+func close():
+	openMesh.visible = false
+	closeMesh.visible = true
+	is_open = false
+"
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_hx8yw"]
+data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
+
+[node name="Table" type="MeshInstance3D" groups=["interact"]]
+transform = Transform3D(1.2794287, 0, 0, 0, 0.58438575, 0, 0, 0, 0.031133158, 0, 0, 0)
+transparency = 1.0
+mesh = SubResource("BoxMesh_fow7l")
+script = SubResource("GDScript_fow7l")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_hx8yw")
+
+[node name="open" parent="." instance=ExtResource("1_fow7l")]
+transform = Transform3D(0.23447965, 0, 0, 0, 0.51335955, 0, 0, 0, 9.636028, 0, -0.5646955, 0)
+visible = false
+
+[node name="close" parent="." instance=ExtResource("2_hx8yw")]
+transform = Transform3D(0.23447965, 0, 0, 0, 0.51335955, 0, 0, 0, 9.636028, 0, 0.5646955, 0)
+
+[editable path="open"]

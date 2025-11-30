@@ -1,0 +1,62 @@
+[gd_scene load_steps=12 format=3 uid="uid://bklj7vstopril"]
+
+[ext_resource type="PackedScene" uid="uid://bpe7q1lcp1j63" path="res://assets/showcase/museum_showcase_-_die_vitrine.glb" id="1_oyl0w"]
+[ext_resource type="Script" uid="uid://bgcnsoot8xhg3" path="res://scenes/show_case_boot.gd" id="2_73bte"]
+[ext_resource type="PackedScene" uid="uid://d1jogig6p1wkc" path="res://scenes/heart.tscn" id="3_v7qex"]
+[ext_resource type="PackedScene" uid="uid://d1k8nq3mf5y4c" path="res://scenes/implant.tscn" id="4_cjwbn"]
+[ext_resource type="PackedScene" uid="uid://dgwmqiwuroycx" path="res://scenes/granate.tscn" id="5_cjwbn"]
+[ext_resource type="PackedScene" uid="uid://dplpfpr8wshra" path="res://assets/wood_table/WoodTable.glb" id="6_i2c2i"]
+[ext_resource type="PackedScene" uid="uid://c1505m33vfysm" path="res://scenes/talisman.tscn" id="7_j7bh5"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_oyl0w"]
+size = Vector3(1, 1.3270264, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_oyl0w"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_73bte"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_01scl"]
+data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
+
+[node name="ShowCase" type="Node3D"]
+
+[node name="Sketchfab_Scene" parent="." instance=ExtResource("1_oyl0w")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Sketchfab_Scene"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sketchfab_Scene/StaticBody3D"]
+transform = Transform3D(1.9600003, 0, 0, 0, 1.9600003, 0, 0, 0, 1.9600003, 0, 1.3193796, 0)
+shape = SubResource("BoxShape3D_oyl0w")
+
+[node name="ShowCaseBoot" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7174257, 0)
+material_override = SubResource("StandardMaterial3D_oyl0w")
+transparency = 1.0
+mesh = SubResource("BoxMesh_73bte")
+script = ExtResource("2_73bte")
+metadata/interactable = true
+
+[node name="ShowCaseBootBody" type="StaticBody3D" parent="ShowCaseBoot"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ShowCaseBoot/ShowCaseBootBody"]
+shape = SubResource("ConcavePolygonShape3D_01scl")
+
+[node name="heart" parent="ShowCaseBoot" instance=ExtResource("3_v7qex")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.09216404, -0.02090919)
+visible = false
+
+[node name="implant" parent="ShowCaseBoot" instance=ExtResource("4_cjwbn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.21489823, 0)
+visible = false
+
+[node name="granate" parent="ShowCaseBoot" instance=ExtResource("5_cjwbn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.11805141, 0)
+visible = false
+
+[node name="talisman" parent="ShowCaseBoot" instance=ExtResource("7_j7bh5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.25425166, 0)
+visible = false
+
+[node name="Sketchfab_Scene2" parent="." instance=ExtResource("6_i2c2i")]
+transform = Transform3D(0.48, 0, 0, 0, 0.48, 0, 0, 0, 0.48, 0, -0.6261503, 0)

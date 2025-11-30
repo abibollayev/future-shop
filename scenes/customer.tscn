@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://dribcxf7lbd10"]
+
+[ext_resource type="PackedScene" uid="uid://b41c7kcd5l3n3" path="res://scenes/person.tscn" id="1_ktfjk"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_fx2s6"]
+
+[node name="Customer" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transparency = 0.73
+mesh = SubResource("CapsuleMesh_fx2s6")
+
+[node name="Customer" type="MeshInstance3D" parent="."]
+
+[node name="Person" parent="." instance=ExtResource("1_ktfjk")]
+transform = Transform3D(0.82, 0, 0, 0, 0.82, 0, 0, 0, 0.82, 0, -0.9844355, 0)

@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://d1k8nq3mf5y4c"]
+
+[ext_resource type="PackedScene" uid="uid://bb4hiwnibln63" path="res://assets/sketchfab/implant/implant.glb" id="1_p8a3u"]
+
+[node name="implant" type="Node3D"]
+
+[node name="Sketchfab_Scene2" parent="." instance=ExtResource("1_p8a3u")]
+transform = Transform3D(-0.01, 0, -8.7422775e-10, 0, 0.01, 0, 8.7422775e-10, 0, -0.01, 0, 0, 0)

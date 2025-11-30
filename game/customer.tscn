@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://pl10t3vurqcy"]
+
+[ext_resource type="Script" uid="uid://bumve4dl1x27o" path="res://game/customer.gd" id="1_ysojs"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_pgmqx"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ysojs"]
+
+[node name="Customer" type="CharacterBody3D"]
+script = ExtResource("1_ysojs")
+
+[node name="Mesh" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_pgmqx")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_ysojs")
+disabled = true
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]

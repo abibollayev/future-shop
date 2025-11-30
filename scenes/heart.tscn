@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://d1jogig6p1wkc"]
+
+[ext_resource type="PackedScene" uid="uid://tujlbqr2mify" path="res://assets/golem_heart/Golem_Heart.glb" id="1_v30as"]
+
+[node name="heart" type="Node3D"]
+
+[node name="Golem_Heart" parent="." instance=ExtResource("1_v30as")]
+transform = Transform3D(0.006, 0, 0, 0, 0.006, 0, 0, 0, 0.006, 0, 0, 0)

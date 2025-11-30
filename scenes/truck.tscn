@@ -1,0 +1,44 @@
+[gd_scene load_steps=7 format=3 uid="uid://be3wdxlitdqca"]
+
+[ext_resource type="PackedScene" uid="uid://bhsa80h1aysad" path="res://assets/truck/Truck.glb" id="1_8ivgs"]
+[ext_resource type="Script" uid="uid://drbc8mu08dvjm" path="res://scenes/boot.gd" id="2_w5yki"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_w5yki"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w5yki"]
+transparency = 1
+albedo_color = Color(1, 1, 1, 0)
+
+[sub_resource type="BoxMesh" id="BoxMesh_8ivgs"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_w5yki"]
+data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
+
+[node name="Truck" type="Node3D"]
+transform = Transform3D(6.939, 0, 0, 0, 2.149, 0, 0, 0, 3.41, 0, 0, 0)
+
+[node name="TruckAsset" parent="." instance=ExtResource("1_8ivgs")]
+transform = Transform3D(0.12103726, 0, 0, 0, 0.39077824, 0, 0, 0, 0.2462985, 0, 0, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="TruckAsset"]
+transform = Transform3D(0.80220807, 0, 0, 0, 0.9483877, 0, 0, 0, 0.99999976, 0, 0, 0)
+
+[node name="TruckBody" type="StaticBody3D" parent="TruckAsset/MeshInstance3D"]
+transform = Transform3D(3.7029622, 0, 0, 0, 3.2911832, 0, 0, 0, 6.810283, 0, 1.7222873, -0.3898777)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TruckAsset/MeshInstance3D/TruckBody"]
+transform = Transform3D(1, 0, 0, 0, 1.0000001, 0, 0, 0, 1, 0, 0, 0)
+shape = SubResource("BoxShape3D_w5yki")
+
+[node name="Boot" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.31199187, 0, 0, 0, 1.0994062, 0, 0, 0, 0.18676545, 0, 0.8376372, -0.9046262)
+material_override = SubResource("StandardMaterial3D_w5yki")
+mesh = SubResource("BoxMesh_8ivgs")
+script = ExtResource("2_w5yki")
+metadata/interactable = true
+
+[node name="BootBody" type="StaticBody3D" parent="Boot"]
+
+[node name="BootCollision" type="CollisionShape3D" parent="Boot/BootBody"]
+transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0)
+shape = SubResource("ConcavePolygonShape3D_w5yki")

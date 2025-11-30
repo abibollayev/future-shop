@@ -1,0 +1,62 @@
+[gd_scene load_steps=4 format=3 uid="uid://bkhl2r0ulh42f"]
+
+[ext_resource type="Texture2D" uid="uid://hxmndwfhrv7l" path="res://assets/textures/ui/background_main_menu.png" id="1_mu8pm"]
+[ext_resource type="Script" uid="uid://diqwyau3ccxf3" path="res://ui/main_menu/main_menu.gd" id="1_omy8q"]
+[ext_resource type="Theme" uid="uid://b3kq74llqlv3x" path="res://assets/textures/ui/MinimalUI.tres" id="2_mu8pm"]
+
+[node name="MainMenu" type="Node"]
+script = ExtResource("1_omy8q")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Root" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Bg" type="TextureRect" parent="CanvasLayer/Root"]
+layout_mode = 1
+offset_right = 3465.0
+offset_bottom = 1850.0
+scale = Vector2(0.605, 0.60345155)
+texture = ExtResource("1_mu8pm")
+stretch_mode = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Root"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = -85.0
+offset_right = 150.0
+offset_bottom = 85.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+
+[node name="PlayBtn" type="Button" parent="CanvasLayer/Root/VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme = ExtResource("2_mu8pm")
+text = "играть"
+
+[node name="SettingsBtn" type="Button" parent="CanvasLayer/Root/VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme = ExtResource("2_mu8pm")
+text = "настройки"
+
+[node name="ExitBtn" type="Button" parent="CanvasLayer/Root/VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme = ExtResource("2_mu8pm")
+text = "выйти"

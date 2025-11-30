@@ -1,0 +1,33 @@
+[gd_scene load_steps=6 format=3 uid="uid://begvny12p53nn"]
+
+[ext_resource type="PackedScene" uid="uid://c2ya0fwwni7d0" path="res://assets/showcase_2/Untitled.glb" id="1_6o6od"]
+[ext_resource type="Script" uid="uid://dg88n040ms6df" path="res://show_case_big_mesh.gd" id="2_cxfi7"]
+[ext_resource type="PackedScene" uid="uid://dfvm7vipynq47" path="res://scenes/blast.tscn" id="3_nsorb"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_odlsj"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_tkxny"]
+data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
+
+[node name="ShowCaseBig" type="Node3D"]
+transform = Transform3D(1.555, 0, 0, 0, 1.555, 0, 0, 0, 1.555, 0, 0, 0)
+
+[node name="Untitled" parent="." instance=ExtResource("1_6o6od")]
+transform = Transform3D(0.86, 0, 0, 0, 0.86, 0, 0, 0, 0.86, 0, 0, 1.4759307)
+
+[node name="ShowCaseBigMesh" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.58222085, 0, 0, 0, 2.1562705, 0, 0, 0, 1.5118678, 0, 1.1395981, 0)
+transparency = 1.0
+mesh = SubResource("BoxMesh_odlsj")
+script = ExtResource("2_cxfi7")
+metadata/interactable = true
+
+[node name="StaticBody3D" type="StaticBody3D" parent="ShowCaseBigMesh"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ShowCaseBigMesh/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 0.99999994, 0, 0, 0, 1, 0, 0, 0)
+shape = SubResource("ConcavePolygonShape3D_tkxny")
+
+[node name="blast" parent="ShowCaseBigMesh" instance=ExtResource("3_nsorb")]
+transform = Transform3D(-5.8817434e-08, -1.6865629e-08, -1.3998125, -0.10418194, 0.36332557, 0, 0.5181857, 0.14858738, -2.3563425e-08, 0, -0.08692935, 0)
+visible = false
